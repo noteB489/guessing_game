@@ -9,15 +9,15 @@ chances = 5
 while chances > 0:
     user_guess = int(input("What is your guess? "))
 
+    chances -= 1
+
     if user_guess == random_number:
         print("Correct! The number was", random_number)
         break
     elif user_guess < random_number:
-        print("Your guess is too low.")
+        print("Your guess is too low.", chances, "times left")
     else:
-        print("Your guess is too high.")
-
-    chances -= 1
+        print("Your guess is too high.", chances, "times left")
 
 if chances == 0:
     print("You have lost. The number was", random_number)
